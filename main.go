@@ -120,7 +120,7 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	t = (CreateAccessToken("8aCUTWuL4sP-Gw", "4EyjhoyBM7LaOPvC4OrmrxXqsJ4"))
+	t = (CreateAccessToken("clientID", "clientSecret"))
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
