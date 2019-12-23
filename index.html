@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News App Demo</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <main>
+        <header>
+          <a class="logo" href="/">MinReddit</a>
+          <form action="/search" method="GET">
+            <input autofocus class="search-input" value=""
+            placeholder="Enter a Subreddit" type="search" name="q">
+          </form>
+          <a href="https://www.reddit.com/" class="button
+            reddit-button">View on Reddit</a>
+        </header>
+        <section class="container">
+          <ul class="search-results">
+            {{ range .Results.Data.Children }}
+              <li class="reddit-post">
+                <div>
+                  <a target="_blank" rel="noreferrer noopener" href="{{.Data.Url}}">
+                    <h3 class="title">{{.Data.Title }}</h3>
+                  </a>
+                </div>
+              </li>
+            {{ end }}
+          </ul>
+        </section>
+      </main>
+</body>
+</html>
